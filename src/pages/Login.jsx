@@ -6,6 +6,10 @@ const Login = () => {
     console.log("Đăng nhập với:", values);
   };
 
+  const handleLogin = () => {
+    localStorage.isAuthenticated = true;
+  }
+
   return (
     <div style={{ display: "flex", justifyContent: "center", marginTop: 100 }}>
       <Card title="Đăng nhập" style={{ width: 400 }}>
@@ -23,7 +27,7 @@ const Login = () => {
             <Input.Password placeholder="Mật khẩu" />
           </Form.Item>
           <Form.Item>
-            <Button type="primary" htmlType="submit" block>
+            <Button type="primary" htmlType="submit" block onClick={handleLogin}>
               Đăng nhập
             </Button>
           </Form.Item>

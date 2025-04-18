@@ -20,10 +20,10 @@ export const routes = [
   {
     element: <PrivateRoutes />,
     children: [
-      { path: "/quiz", element: <Quiz /> },
-      { path: "/topic", element: <Topic /> },
-      { path: "/answers", element: <Answers /> },
-      { path: "/result", element: <Result /> },
+      { path: "quiz", element: <Quiz /> },
+      { path: "topic", element: <Topic /> },
+      { path: "answers", element: <Answers /> },
+      { path: "result", element: <Result /> },
     ],
   },
 ];

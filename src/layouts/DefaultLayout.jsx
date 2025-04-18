@@ -1,6 +1,5 @@
-import { Flex, Layout, Menu } from "antd";
+import { Button, Flex, Layout, Menu } from "antd";
 import { Content, Footer, Header } from "antd/es/layout/layout";
-import Sider from "antd/es/layout/Sider";
 import React from "react";
 import { NavLink, Outlet } from "react-router-dom";
 
@@ -24,6 +23,10 @@ const DefaultLayout = () => {
     };
   });
 
+  const handleLogout = () => {
+    localStorage.isAuthenticated = false;
+  };
+
   return (
     <>
       <Layout>
@@ -38,6 +41,13 @@ const DefaultLayout = () => {
               style={{ flex: 1, minWidth: 0 }}
             ></Menu>
           </Flex>
+          {localStorage.isAuthenticated === true ? (
+            <Button type="link" onClick={handleLogout}>
+              Đăng xuất
+            </Button>
+          ) : (
+            <></>
+          )}
         </Header>
         <Layout>
           <Content>
