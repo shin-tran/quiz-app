@@ -1,20 +1,39 @@
-import { Button, Flex, Layout } from "antd";
+import { Button, Flex, Layout, Menu } from "antd";
 import { Content, Footer, Header } from "antd/es/layout/layout";
 import Sider from "antd/es/layout/Sider";
 import React from "react";
-import { Link, Outlet } from "react-router-dom";
 
 const DefaultLayout = () => {
+  const navList = [
+    { id: 1, label: "Home" },
+    { id: 2, label: "Topic" },
+    { id: 3, label: "Answers" },
+  ];
+
+  const items = navList.map((item) => {
+    return { key: item.id, label: item.label };
+  });
+
   return (
     <>
       <Layout>
-        <Header>header</Header>
+        <Header style={{ display: "flex", alignItems: "center" }}>
+          <div className="logo">Quiz</div>
+          <Menu
+            theme="light"
+            mode="horizontal"
+            items={items}
+            style={{ flex: 1, minWidth: 0 }}
+          ></Menu>
+        </Header>
         <Layout>
           <Sider>left sidebar</Sider>
           <Content>
             <Flex gap="small">
               <Outlet />
-              <Button type="primary" href="login">Login</Button>
+              <Button type="primary" href="login">
+                Login
+              </Button>
               <Button type="primary">Register</Button>
             </Flex>
           </Content>
