@@ -1,0 +1,12 @@
+{
+  "quizzes": [{ "id": 1, "title": "Kiểm tra JS", "description": "5 câu" }],
+  "questions": [
+    {
+      "id": 1,
+      "quizId": 1,
+      "content": "1 + 1 = ?",
+      "options": ["2", "11"],
+      "correctAnswer": "2"
+    }
+  ]
+}
