@@ -6,14 +6,20 @@ import Quiz from "./pages/Quiz";
 import PrivateRoutes from "./components/PrivateRoutes";
 import Answers from "./pages/Answers";
 import Topic from "./pages/Topic";
+import DefaultLayout from "./layouts/DefaultLayout";
 
 export const routes = [
-  { path: "/", element: <Home /> },
-  { path: "/login", element: <Login /> },
-  { path: "/register", element: <Register /> },
+  {
+    element: <DefaultLayout />,
+    children: [
+      { path: "/", element: <Home /> },
+      { path: "login", element: <Login /> },
+      { path: "register", element: <Register /> },
+    ],
+  },
   {
     element: <PrivateRoutes />,
-    chilrent: [
+    children: [
       { path: "/quiz", element: <Quiz /> },
       { path: "/topic", element: <Topic /> },
       { path: "/answers", element: <Answers /> },
